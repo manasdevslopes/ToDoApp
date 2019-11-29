@@ -1,12 +1,18 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import ToDoApp from './src/ToDoApp.js';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+import store from './src/store';
+import { Provider } from 'react-redux';
+
+export default class App extends React.Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <ToDoApp />
+      </Provider>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
